@@ -9,7 +9,7 @@ public class SearchMercedesSUVcar extends BaseTest {
 
 
     @Test
-    public void searchQueryMersGleCoupe() throws Exception{
+    public void searchQueryMersGleCoupe() {
         PageMercedes pageMercedes = new PageMercedes(driver);
         PageMain pageMain = new PageMain(driver);
 
