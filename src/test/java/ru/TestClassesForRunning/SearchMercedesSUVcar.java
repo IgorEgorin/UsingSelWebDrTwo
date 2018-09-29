@@ -13,8 +13,11 @@ public class SearchMercedesSUVcar extends BaseTest {
         PageMercedes pageMercedes = new PageMercedes(driver);
         PageMain pageMain = new PageMain(driver);
 
+        pageMain.openURLMainPageSpb()
+                .pushLinkBrandMercedesBenz()
+                .pushLinkInSearchBarShowAllCars();
 
-        pageMercedes.openUrlCarsMercedesAll().clickOnLinkGLEcoupe();
+        pageMercedes.clickOnLinkGLEcoupe();
 
         pageMain.pushButtonNewCarInSearchBar()
                 .typePriceMinAndMax("3200000","5100000" )
