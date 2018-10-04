@@ -6,7 +6,7 @@ import ru.helperpackage.BasePageObject;
 
 public class PageMercedes extends BasePageObject<PageMercedes> {
 
-    private String URLMercedesAll = "https://auto.ru/sankt-peterburg/cars/mercedes/all/";
+    private String URL = "https://auto.ru/sankt-peterburg/cars/mercedes/all/";
     private By listOfMercedesAfterLoading = By.xpath("//div[@class=\"ListingCars-module__container ListingCars-module__list\"]");
     private By linkMercedesGLEcoupe = By.xpath("//a[@class=\"Link ListingPopularMMM-module__itemName\" and contains (text(), 'GLE Coupe')]");
 
@@ -20,8 +20,8 @@ public class PageMercedes extends BasePageObject<PageMercedes> {
 
     public PageMercedes openUrlCarsMercedesAll(){
 
-        System.out.println("\nOpen URLMercedesAll" + URLMercedesAll);
-        getPage(URLMercedesAll);
+        System.out.println("\nOpen URL" + URL);
+        getPage(URL);
         return new PageMercedes(driver);
     }
 

@@ -1,30 +1,25 @@
 package ru.TestClassesForRunning;
 
 import org.junit.Test;
-import ru.PagesClasses.PageMain;
-import ru.PagesClasses.PageMercedes;
 import ru.helperpackage.BaseTest;
 
 public class SearchMercedesSUVcar extends BaseTest {
 
 
     @Test
-    public void searchQueryMersGleCoupe() {
-        PageMercedes pageMercedes = new PageMercedes(driver);
-        PageMain pageMain = new PageMain(driver);
+    public void searchQueryMersGleCoupe() throws Exception{
 
-        pageMain.openURLMainPageSpb()
-                .pushLinkBrandMercedesBenz()
-                .pushLinkInSearchBarShowAllCars();
 
-        pageMercedes.clickOnLinkGLEcoupe();
+        pageMercedes.openUrlCarsMercedesAll();
 
         pageMain.pushButtonNewCarInSearchBar()
                 .typePriceMinAndMax("3200000","5100000" )
                 .pushButtonSearchCarByParameters();
 
+        pageMercedes.openUrlCarsMercedesAll();
 
-        pageMercedes.waitWhenListOfMercedesWillBeLoad();
+
+//        pageMercedes.waitWhenListOfMercedesWillBeLoad();
 
 
 

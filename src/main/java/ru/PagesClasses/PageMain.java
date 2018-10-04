@@ -7,24 +7,13 @@ import ru.helperpackage.BasePageObject;
 public class PageMain extends BasePageObject<PageMain> {
 
 
-    private String URLMainPageSpb = "https://auto.ru/sankt-peterburg/";
     private By fieldMinPrice = By.name("price_from");
     private By fieldMaxPrice = By.name("price_to");
     private By submitButton = By.className("ButtonWithLoader__content");
     private By buttonNewCarInSearchBar = By.xpath("//span[@class=\"Button__text\" and contains (text(), 'Новые')]");
-    private By linkBrandMercedesBenz = By.xpath("//div[@class=\"IndexMarks__item-name\" and contains (text(), 'Mercedes-Benz')]");
-    private By linkInSearchBarShowAllCars = By.cssSelector("[class=\"ListingPopularMMM-module__container PageListingCars-module__popularMMM\"] [class=\"Link\"]");
 
     public PageMain(WebDriver driver) {
         super(driver);
-    }
-
-
-    public PageMain openURLMainPageSpb(){
-
-        System.out.println("\nOpen URL" + URLMainPageSpb);
-        getPage(URLMainPageSpb);
-        return new PageMain(driver);
     }
 
     public PageMain pushButtonNewCarInSearchBar() {
@@ -44,18 +33,6 @@ public class PageMain extends BasePageObject<PageMain> {
     public PageMain pushButtonSearchCarByParameters() {
         System.out.println("\nClick on button 'Search' in search bar");
         click(submitButton);
-        return new PageMain(driver);
-    }
-
-    public PageMain pushLinkBrandMercedesBenz() {
-        System.out.println("\nClick on link 'Mercedes-Benz' on main page");
-        click(linkBrandMercedesBenz);
-        return new PageMain(driver);
-    }
-
-    public PageMain pushLinkInSearchBarShowAllCars() {
-        System.out.println("\nClick on link 'Show all cars' in search bar");
-        click(linkInSearchBarShowAllCars);
         return new PageMain(driver);
     }
 }
